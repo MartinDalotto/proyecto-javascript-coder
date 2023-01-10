@@ -23,14 +23,14 @@ alert("Bienvenidos a Nagú")
 for (let turno = 1; turno <= 30; turno++) {
     //Pedir al usuario que se identifique
     let nombre = prompt("Ingrese su nombre o ingrese ESC para salir");
-    while (nombre == "") {
+    while (nombre == ("" || " ")) {
         nombre = prompt("Ingrese un nombre válido")
     }
     if (nombre == SALIR) {
         break
     }
     let apellido = prompt("Ingrese su apellido o ingrese ESC para salir")
-    while (apellido == "") {
+    while (apellido == ("" || " ")) {
         apellido = prompt("Ingrese un apellido válido")
     }
     if (apellido == SALIR) {
