@@ -1,13 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Nagú - Nails & Design</title>
 </head>
-<body>
-    <h1>NAGÚ NAILS - SERVICIO DE MANICURA</h1>
+
+<body class="fondo-lila">
+    <h1 class="titulo-turno">NAGÚ NAILS - SERVICIO DE MANICURA</h1>
+
+    <div class="turno-tarjeta">
+
+        <h2 class="subtitulo-turno" id="pedido"></h2>
+
+        <form action="turno-formulario" id="form">
+
+            <div class="turno-input nombre">
+                <input type="text" id="nombre">
+                <label for="nombre">Nombre</label>
+                <p class="validacion-datos"></p>
+            </div>
+
+            <div class="turno-input apellido">
+                <input type="text" id="apellido">
+                <label for="apellido">Apellido</label>
+                <p class="validacion-datos"></p>
+            </div>
+
+            <div class="turno-input dni">
+                <input type="text" id="dni">
+                <label for="dni">DNI</label>
+                <p class="validacion-datos"></p>
+            </div>
+
+            <div class="turno-input celular">
+                <input type="text" id="celular">
+                <label for="celular">Celular</label>
+                <p class="validacion-datos"></p>
+            </div>
+
+            <div class="turno-input fecha">
+                <input type="text" id="fecha">
+                <label for="fecha">Fecha (MM/DD/AAAA)</label>
+                <p class="validacion-datos"></p>
+            </div>
+
+            <div class="turno-input servicio">
+                <input type="text" id="servicio">
+                <label for="servicio">Servicio (Tradicional / Semipermanentes / Kapping)</label>
+                <p class="validacion-datos"></p>
+            </div>
+
+            <input type="submit" name="enviar" value="Enviar" class="btn-turno">
+
+            <p class="turno-confirmado"></p>
+        </form>
+
+    </div>
+
     <script src="js/script.js"></script>
+
 </body>
+
 </html>
+
+<!--f
+        <form action="">
+            <div class="mb-3">
+                <label for="nombre" class="contacto-txt form-label">Nombre</label>
+                <input type="nombre" name="nombre" id="nombre" class="form-control" placeholder="Nombre"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="asunto" class="contacto-txt form-label">Asunto</label>
+                <input class="form-control" list="opciones" id="exampleDataList">
+                <datalist name="asunto" id="opciones" required>
+                    <option value="Consulta">
+                    <option value="Presupuesto">
+                    <option value="Reserva">
+                    <option value="Otro">
+                </datalist>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="contacto-txt form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Email"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="telefono" class="contacto-txt form-label">Teléfono</label>
+                <input type="telefono" name="telefono" id="telefono" class="form-control"
+                    placeholder="Teléfono" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="mensaje" class="contacto-txt form-label">Mensaje</label>
+                <textarea class="form-control" name="mensaje" id="mensaje" rows="8" placeholder="Mensaje"
+                    required></textarea>
+            </div>
+
+                        <div class="turno-input-servicio">
+                <p id="servicio">Servicio</p>
+                <label class="radio-inline" for="tradicional">
+                    <input type="radio" id="tradicional">Tradicional
+                </label>
+                <label class="radio-inline" for="semipermanente">
+                    <input type="radio" id="semipermanente">Semipermanente
+                </label>
+                <label class="radio-inline" for="kapping">
+                    <input type="radio" id="kapping">Kapping
+                </label>
+                <p></p>
+            </div>
+        
+-->

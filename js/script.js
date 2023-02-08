@@ -1,23 +1,19 @@
 //Declaración de constantes y variable global
-const SALIR = "ESC";
-const IVA = 1.21;
-let total = 0;
+const listadoInputs = document.querySelectorAll(".turno-input")
+const form = document.getElementById("form")
 const listadoDeClientes = [];
+let nombre = document.getElementById("nombre")
+let apellido = document.getElementById("apellido")
+let dni = document.getElementById("dni")
+let celular = document.getElementById("celular")
+let fecha = determinarFecha()
+let servicio = document.getElementById("servicio")
 
 //Declaración de funciones
-function sumarIVA(precio) {
-    if (precio == 0) {
-        return false
-    }
-    precio = precio * IVA
-    return precio
-}
 
 function determinarFecha() {
-    let fecha = prompt(`Ingrese la fecha que desea sacar turno (MM/DD/AAAA)`)
-    while (fecha == "" || fecha == " ") {
-        fecha = prompt(`Ingrese una fecha válida`)
-    }
+    let fecha = document.getElementById("fecha").value
+
     let fecha_cadena = new Date(fecha);
     let meses = [
         "Enero", "Febrero", "Marzo",
@@ -32,71 +28,87 @@ function determinarFecha() {
     return turnoFecha
 }
 
-function informarTurno(nombre, apellido, turno, fecha, servicio, precioServicio) {
-    alert(`SU TURNO HA SIDO CONFIRMADO\nNombre y apellido: ${nombre} ${apellido}\nTurno N° ${turno} - Fecha: ${fecha}\nEl servicio elegido es: ${servicio}\nEl precio del servicio es: ${precioServicio}`)
-}
-
-//Bienvenida
-alert(`Bienvenidos a Nagú`)
-
-for (let turno = 1; turno <= 30; turno++) {
-    //Pedir al usuario que se identifique
-    let nombre = prompt(`Ingrese su nombre o ingrese ESC para salir`);
-    while (nombre == "" || nombre == " ") {
-        nombre = prompt(`Ingrese un nombre válido`)
-    }
-    if (nombre == SALIR) {
-        break
-    }
-    let apellido = prompt(`Ingrese su apellido o ingrese ESC para salir`)
-    while (apellido == "" || apellido == " ") {
-        apellido = prompt(`Ingrese un apellido válido`)
-    }
-    if (apellido == SALIR) {
-        break
-    }
-    let dni = prompt(`Ingrese su número de DNI (sin puntos)`);
-    while (dni == "" || dni == " ") {
-        dni = prompt(`Ingrese un número de DNI válido`)
-    }
-    let celular = prompt(`Ingrese su número de celular`);
-    while (celular == "" || celular == " ") {
-        celular = prompt(`Ingrese un número de celular válido`)
-    }
-    let fecha = determinarFecha();
-
-        //Pedir al usuario que elija un servicio y devolverle el turno con la fecha, el servicio y el precio del servicio elegido
-        let servicio = prompt("Elija el número de servicio que desea realizarse\n1 Tradicional\n2 Semipermanente\n3 Kapping")
-        let precioServicio
-        switch (servicio) {
-            case '1':
-                precioServicio = sumarIVA(1500)
-                servicio = "Tradicional"
-                informarTurno(nombre, apellido, turno, fecha, servicio, precioServicio)
-                break
-            case '2':
-                precioServicio = sumarIVA(2000)
-                servicio = "Semipermanente"
-                informarTurno(nombre, apellido, turno, fecha, servicio, precioServicio)
-                break
-            case '3':
-                precioServicio = sumarIVA(2500)
-                servicio = "Kapping"
-                informarTurno(nombre, apellido, turno, fecha, servicio, precioServicio)
-                break
-            default:
-                turno = turno - 1
-                alert(`La opción elegida es incorrecta, vuelva a solicitar su turno`)
-                break;
-        }
-
-        listadoDeClientes.push({ apellido:apellido, nombre:nombre, id:dni, celular:celular, servicio:servicio, fecha:fecha,})
-    }
-
-    listadoDeClientes.sort(function (a, b) {
-        if (a.apellido < b.apellido) { return -1; }
-        if (a.apellido > b.apellido) { return 1; }
-        return 0;
+function validarSolictud() {
+    form.lastElementChild.innerHTML = ``
+    let condicion = true;
+    listadoInputs.forEach((element) => {
+        element.lastElementChild.innerHTML = "";
     })
 
-    console.log(listadoDeClientes)
+    if (nombre.value.lenght < 1 || nombre.value.trim() == "") {
+        pedirDatoValido("nombre",);
+        condicion = false;
+    }
+
+    if (apellido.value.lenght < 1 || apellido.value.trim() == "") {
+        pedirDatoValido("apellido",);
+        condicion = false;
+    }
+
+    if (dni.value.lenght < 8 || dni.value.trim() == "" || isNaN(dni.value)) {
+        pedirDatoValido("dni",);
+        condicion = false;
+    }
+
+    if (celular.value.lenght < 9 || celular.value.trim() == "" || isNaN(celular.value)) {
+        pedirDatoValido("celular",);
+        condicion = false;
+    }
+
+    if (fecha == "") {
+        pedirDatoValido("fecha",);
+        condicion = false;
+    }
+
+    if (servicio.value.lenght < 1 || nombre.value.trim() == "") {
+        pedirDatoValido("servicio",);
+        condicion = false;
+    }
+    return condicion;
+}
+
+function pedirDatoValido(datoPedido,) {
+    let alerta = document.querySelector(`.${datoPedido}`);
+    alerta.lastElementChild.innerHTML = "Ingresá un dato válido"
+}
+
+function enviarSolicitud() {
+    form.reset();
+    form.lastElementChild.innerHTML = `SU SOLICITUD HA SIDO RECIBIDA`
+}
+
+//Declaración de clases
+
+class Cliente {
+    constructor(apellido, nombre, dni, celular, servicio) {
+        this.apellido = apellido;
+        this.nombre = nombre;
+        this.dni = dni;
+        this.celular = celular;
+        this.servicio = servicio;
+    }
+}
+
+// Formulario
+
+document.getElementById("pedido").innerHTML = "SOLICITÁ TU TURNO";
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let condicion = validarSolictud();
+    if (condicion) {
+        enviarSolicitud();
+    }
+    listadoDeClientes.push(new Cliente);
+})
+
+listadoDeClientes.sort(function (a, b) {
+    if (a.apellido < b.apellido) { return -1; }
+    if (a.apellido > b.apellido) { return 1; }
+    return 0;
+})
+
+localStorage.setItem ("listadodeClientes", JSON.stringify (listadoDeClientes))
+
+
+console.log(listadoDeClientes)

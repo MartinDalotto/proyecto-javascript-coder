@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fondo-lila {
+    background-color: #c7c7ef;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+
+.turno-tarjeta {
+    background-color: #ffffff;
+    width: 550px;
+    height: 100%;
+    border-radius: 20px;
+    padding: 30px 30px;
+    margin: auto;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.274);
+}
+
+.turno-formulario {
+    max-width: 100%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.turno-input {
+    margin-bottom: 30px;
+}
+
+.turno-input label {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.turno-input input {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    border-bottom: 2px solid #9a9ad5;
+}
+
+.turno-input input:focus + label {
+    font-weight: 600;
+    color: #3f3f75;
+}
+
+/*.turno-input-servicio {
+    padding-top: 15px;
+    border: none;
+	display: flex;
+	flex-direction: row;
+    justify-content:space-around;
+	break-before: always;
+    font-size: 1rem;
+    font-weight: 300;
+}*/
+
+.btn-turno {
+    color: #ffffff;
+    background-color: #9a9ad5;
+    height: 50px;
+    width: 100px;
+    padding: 12px 0;
+    margin-top: 10px;
+    border: none;
+    border-radius: 30px;
+    align-self: center;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 300;
+    display: block;
+    margin: auto;
+}
+
+.btn-turno:hover {
+    background-color: #c7c7ef;
+    color: #9a9ad5;
+    scale: 1.1;
+    transition: linear 400ms;
+}
+
+.contacto {
+    padding: 30px;
+}
+
+.titulo-turno{
+    color: #3f3f75;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    padding-top: 30px;
+    margin-top: 0;
+}
+
+.subtitulo-turno {
+    color: #9a9ad5;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0px 15px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.turno-txt {
+    color: #000000;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+.validacion-datos {
+    color: red;
+    margin-top: 0px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.turno-confirmado {
+    text-align: center;
+}
