@@ -36,38 +36,38 @@ function validarSolictud() {
     })
 
     if (nombre.value.lenght < 1 || nombre.value.trim() == "") {
-        pedirDatoValido("nombre",);
+        pedirDatoValido("nombre");
         condicion = false;
     }
 
     if (apellido.value.lenght < 1 || apellido.value.trim() == "") {
-        pedirDatoValido("apellido",);
+        pedirDatoValido("apellido");
         condicion = false;
     }
 
     if (dni.value.lenght < 8 || dni.value.trim() == "" || isNaN(dni.value)) {
-        pedirDatoValido("dni",);
+        pedirDatoValido("dni");
         condicion = false;
     }
 
     if (celular.value.lenght < 9 || celular.value.trim() == "" || isNaN(celular.value)) {
-        pedirDatoValido("celular",);
+        pedirDatoValido("celular");
         condicion = false;
     }
 
     if (fecha == "") {
-        pedirDatoValido("fecha",);
+        pedirDatoValido("fecha");
         condicion = false;
     }
 
     if (servicio.value.lenght < 1 || nombre.value.trim() == "") {
-        pedirDatoValido("servicio",);
+        pedirDatoValido("servicio");
         condicion = false;
     }
     return condicion;
 }
 
-function pedirDatoValido(datoPedido,) {
+function pedirDatoValido(datoPedido) {
     let alerta = document.querySelector(`.${datoPedido}`);
     alerta.lastElementChild.innerHTML = "Ingresá un dato válido"
 }
@@ -94,21 +94,22 @@ class Cliente {
 document.getElementById("pedido").innerHTML = "SOLICITÁ TU TURNO";
 
 form.addEventListener("submit", (e) => {
+    listadoDeClientes.push(new Cliente (apellido.value, nombre.value, dni.value, celular.value, servicio.value));
+    
+    listadoDeClientes.sort(function (a, b) {
+        if (a.apellido < b.apellido) { return -1; }
+        if (a.apellido > b.apellido) { return 1; }
+        return 0;
+    })
+
+    localStorage.setItem ("listadodeClientes", JSON.stringify (listadoDeClientes))
+
     e.preventDefault();
     let condicion = validarSolictud();
     if (condicion) {
         enviarSolicitud();
     }
-    listadoDeClientes.push(new Cliente);
+    
 })
-
-listadoDeClientes.sort(function (a, b) {
-    if (a.apellido < b.apellido) { return -1; }
-    if (a.apellido > b.apellido) { return 1; }
-    return 0;
-})
-
-localStorage.setItem ("listadodeClientes", JSON.stringify (listadoDeClientes))
-
 
 console.log(listadoDeClientes)
