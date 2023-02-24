@@ -15,7 +15,9 @@
 </head>
 
 <body class="fondo-lila">
-    <h1 class="titulo-turno">NAGÚ NAILS - SERVICIO DE MANICURA</h1>
+    <h1 class="titulo-turno" id="encabezado">NAGÚ NAILS - SERVICIO DE MANICURA</h1>
+
+    <input type="button" class="tablaturnos" id="tablaNoDisponibles" value="Ver fechas no disponibles">
 
     <div class="turno-tarjeta">
 
@@ -53,10 +55,13 @@
                 <p class="validacion-datos"></p>
             </div>
 
-            <div class="turno-input servicio">
-                <input type="text" id="servicio">
-                <label for="servicio">Servicio (Tradicional / Semipermanentes / Kapping)</label>
-                <p class="validacion-datos"></p>
+            <div class="turno-input">
+                <p>Seleccioná un servicio:</p>
+                <select id="servicio">
+                    <option value="1500">Tradicional</option>
+                    <option value="2000">Semipermanente</option>
+                    <option value="2500">Kapping</option>
+                </select>
             </div>
 
             <input type="submit" name="enviar" value="Enviar" class="btn-turno">
@@ -65,62 +70,10 @@
         </form>
 
     </div>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/script.js"></script>
 
 </body>
 
 </html>
-
-<!--f
-        <form action="">
-            <div class="mb-3">
-                <label for="nombre" class="contacto-txt form-label">Nombre</label>
-                <input type="nombre" name="nombre" id="nombre" class="form-control" placeholder="Nombre"
-                    required>
-            </div>
-
-            <div class="mb-3">
-                <label for="asunto" class="contacto-txt form-label">Asunto</label>
-                <input class="form-control" list="opciones" id="exampleDataList">
-                <datalist name="asunto" id="opciones" required>
-                    <option value="Consulta">
-                    <option value="Presupuesto">
-                    <option value="Reserva">
-                    <option value="Otro">
-                </datalist>
-            </div>
-
-            <div class="mb-3">
-                <label for="email" class="contacto-txt form-label">Email</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Email"
-                    required>
-            </div>
-
-            <div class="mb-3">
-                <label for="telefono" class="contacto-txt form-label">Teléfono</label>
-                <input type="telefono" name="telefono" id="telefono" class="form-control"
-                    placeholder="Teléfono" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="mensaje" class="contacto-txt form-label">Mensaje</label>
-                <textarea class="form-control" name="mensaje" id="mensaje" rows="8" placeholder="Mensaje"
-                    required></textarea>
-            </div>
-
-                        <div class="turno-input-servicio">
-                <p id="servicio">Servicio</p>
-                <label class="radio-inline" for="tradicional">
-                    <input type="radio" id="tradicional">Tradicional
-                </label>
-                <label class="radio-inline" for="semipermanente">
-                    <input type="radio" id="semipermanente">Semipermanente
-                </label>
-                <label class="radio-inline" for="kapping">
-                    <input type="radio" id="kapping">Kapping
-                </label>
-                <p></p>
-            </div>
-        
--->

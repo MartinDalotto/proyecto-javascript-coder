@@ -1,0 +1,56 @@
+[
+    {
+        "apellido": "Dalotto",
+        "nombre": "Martin",
+        "dni": "35706297",
+        "celular": "3434616556",
+        "fecha": "08/03/2023",
+        "servicioElegido": "Semipermanente",
+        "precioServicio": 2420
+    },
+    {
+        "apellido": "Argento",
+        "nombre": "Mónica",
+        "fecha": "12/03/2023",
+        "dni": "34887965",
+        "celular": "3435458972",
+        "servicioElegido": "Kapping",
+        "precioServicio": 3025
+    },
+    {
+        "apellido": "Granger",
+        "nombre": "Hermione",
+        "dni": "32345167",
+        "celular": "3434324657",
+        "fecha": "14/03/2023",
+        "servicioElegido": "Tradicional",
+        "precioServicio": 1815
+    },
+    {
+        "apellido": "Glamour",
+        "nombre": "Penélope",
+        "fecha": "15/03/2023",
+        "dni": "34887965",
+        "celular": "3435458972",
+        "servicioElegido": "Kapping",
+        "precioServicio": 3025
+    },
+    {
+        "apellido": "Romanoff",
+        "nombre": "Natasha",
+        "dni": "30147852",
+        "celular": "3436354984",
+        "fecha": "25/03/2023",
+        "servicioElegido": "Tradicional",
+        "precioServicio": 1815
+    },
+    {
+        "apellido": "de Pegaso",
+        "nombre": "Seiya",
+        "fecha": "03/04/2023",
+        "dni": "34763058",
+        "celular": "3434028591",
+        "servicioElegido": "Semipermanente",
+        "precioServicio": 2420
+    }
+]

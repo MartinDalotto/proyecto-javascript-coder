@@ -1,8 +1,8 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
@@ -49,21 +49,51 @@ body{
     border-bottom: 2px solid #9a9ad5;
 }
 
-.turno-input input:focus + label {
+.turno-input input:focus+label {
     font-weight: 600;
     color: #3f3f75;
 }
 
-/*.turno-input-servicio {
-    padding-top: 15px;
+.tablaturnos {
+    color: #ffffff;
+    background-color: #9a9ad5;
+    height: 50px;
+    width: 200px;
+    padding: 12px 0;
+    margin-top: 10px;
+    margin-bottom: 250px;
     border: none;
-	display: flex;
-	flex-direction: row;
-    justify-content:space-around;
-	break-before: always;
+    border-radius: 30px;
+    align-self: center;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 300;
+    display: block;
+    margin: auto;
+}
+
+.tablaturnos:hover {
+    background-color: #ffffff;
+    color: #9a9ad5;
+    scale: 1.1;
+    transition: linear 400ms;
+}
+
+.turnos-no-disponibles {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
     font-size: 1rem;
     font-weight: 300;
-}*/
+    text-align: center;
+}
+
+.titulo-turnos-no-disponibles{
+    font-weight: 800;
+    color: #3f3f75;
+}
+
 
 .btn-turno {
     color: #ffffff;
@@ -93,7 +123,7 @@ body{
     padding: 30px;
 }
 
-.titulo-turno{
+.titulo-turno {
     color: #3f3f75;
     text-align: center;
     font-size: 2.2rem;
